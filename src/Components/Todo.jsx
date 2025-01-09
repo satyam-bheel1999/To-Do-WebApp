@@ -17,9 +17,9 @@ function Todo() {
     setInput("");
   };
 
-//   const HandleComplete = (indexToComplete) =>{
-//     setArray((prevArray) => prevArray.map((index) => index == indexToComplete ?  ))
-//   }
+  // const HandleComplete = (indexToComplete) =>{
+  //   setArray((prevArray) => prevArray.map((index) => index == indexToComplete ?  ))
+  // }
 
   const HandleRemove = (indexToRemove) =>{
 
