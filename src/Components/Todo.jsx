@@ -33,7 +33,7 @@ function Todo() {
 
   return (
     <>
-      <div className="h-2/3 w-80 border rounded-md shadow-xl relative top-8 right-36 p-7 bg-green-300 ">
+      <div className="h-2/3 w-80 border rounded-md shadow-xl relative top-8 right-36 p-7 bg-white ">
         <form className="flex flex-col">
           <input
             type="text"
@@ -42,9 +42,10 @@ function Todo() {
               setInput(e.target.value);
             }}
             placeholder="Enter your Task"
+            className="border p-3"
           ></input>
 
-          <button onClick={HandleSubmit} className="relative top-8 border border-yellow-300 rounded-3xl p-2 text-base text-white font-bold">Add</button>
+          <button onClick={HandleSubmit} className="relative top-8 border border-yellow-300 rounded-3xl p-2 text-base font-bold hover:bg-yellow-200 ">Add</button>
         </form>
       </div>
 
