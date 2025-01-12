@@ -11,7 +11,6 @@ function Todo() {
 
   let day = time.toLocaleDateString();
 
-
   const HandleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,8 +37,11 @@ function Todo() {
 
   return (
     <>
-      <div className="h-2/3 w-80 border rounded-md shadow-xl relative top-8 right-36 p-7 bg-white flex flex-col ">
-        <form className="flex flex-col">
+      <div className="h-4/5 lg:h-2/3 lg:w-1/4 w-9/12
+       border rounded-md shadow-xl 
+       relative top-8 right-36 p-7 
+       bg-white flex flex-col">
+        <form className="flex flex-row lg:flex lg:flex-col">
           <input
             type="text"
             value={input}
@@ -47,23 +49,70 @@ function Todo() {
               setInput(e.target.value);
             }}
             placeholder="Enter your Task"
-            className="border p-3"
+            className="border p-3 w-11/12"
           ></input>
 
           <button
             onClick={HandleSubmit}
-            className="relative top-8 border border-yellow-300 rounded-3xl p-2 text-base font-bold hover:bg-yellow-200 "
+            className="relative lg:top-8 border 
+            border-yellow-300 rounded-3xl p-2 
+            text-base font-bold hover:bg-yellow-200 
+            w-28 lg:left-1/4 "
           >
             Add
           </button>
-
-          
         </form>
-        <div className="relative top-24 text-center p-5 text-xl font-bold">{day}</div>
+        <div className="relative top-16 text-center p-5 text-xl font-bold">
+          {day}
+        </div>
+        <h1 className="relative top-20 text-center 
+        font-extrabold text-2xl lg:hidden block ">
+          Today's Task
+        </h1>
+        <div className="h-screen relative w-11/12 
+        flex flex-col lg:hidden top-24 ">
+          <h1 className="text-center font-extrabold 
+          text-2xl hidden lg:block">
+            {" "}
+            Today's Task{" "}
+          </h1>
+
+          <ul className="">
+            {array.map((item, index) => (
+              <li
+                style={{
+                  textDecoration: item.completed ? "line-through" : "none",
+                }}
+                key={index}
+                className="flex justify-between 
+                bg-orange-200 p-3 text-2xl m-3 
+                relative top-6 shadow-2xl 
+                border rounded-full"
+              >
+                {item.text}
+                <div className="">
+                  <button onClick={() => HandleComplete(index)}>
+                    <FontAwesomeIcon icon={faCheck} className="h-8 mr-6" />
+                  </button>
+                  <button onClick={() => HandleRemove(index)}>
+                    <FontAwesomeIcon
+                      icon={faCircleXmark}
+                      className="h-8 mr-4"
+                    />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="left-32 h-screen relative w-2/4 flex flex-col">
-        <h1 className="text-center font-extrabold text-2xl"> Today's Task </h1>
+      <div className="left-32 h-screen relative w-2/4 lg:flex flex-col hidden ">
+        <h1 className="text-center font-extrabold text-2xl hidden lg:block">
+          {" "}
+          Today's Task{" "}
+        </h1>
+
         <ul className="">
           {array.map((item, index) => (
             <li
@@ -71,7 +120,10 @@ function Todo() {
                 textDecoration: item.completed ? "line-through" : "none",
               }}
               key={index}
-              className="flex justify-between bg-orange-200 p-3 text-2xl w-3/4 m-3 relative left-8 top-6 shadow-2xl border rounded-full" 
+              className="flex justify-between 
+              bg-orange-200 p-3 text-2xl w-3/4 
+              m-3 relative left-8 top-6 shadow-2xl 
+              border rounded-full"
             >
               {item.text}
               <div className="">
