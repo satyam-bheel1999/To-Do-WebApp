@@ -40,7 +40,8 @@ function Todo() {
       <div className="h-4/5 lg:h-2/3 lg:w-1/4 w-9/12
        border rounded-md shadow-xl 
        relative top-8 right-36 p-7 
-       bg-white flex flex-col">
+       bg-white flex flex-col
+       transition-transform duration-300 ease-in-out hover:-translate-y-2">
         <form className="flex flex-row lg:flex lg:flex-col">
           <input
             type="text"
@@ -52,15 +53,20 @@ function Todo() {
             className="border p-3 w-11/12"
           ></input>
 
+          <div className="flex justify-center">
           <button
             onClick={HandleSubmit}
             className="relative lg:top-8 border 
-            border-yellow-300 rounded-3xl p-2 
-            text-base font-bold hover:bg-yellow-200 
-            w-28 lg:left-1/4 "
+            border-violet-300 rounded-3xl p-2 
+            text-base font-bold hover:bg-violet-300 
+            w-28 "
           >
             Add
           </button>
+
+          </div>
+
+          
         </form>
         <div className="relative top-16 text-center p-5 text-xl font-bold">
           {day}
@@ -85,7 +91,7 @@ function Todo() {
                 }}
                 key={index}
                 className="flex justify-between 
-                bg-orange-200 p-3 text-2xl m-3 
+                bg-white p-3 text-2xl m-3 
                 relative top-6 shadow-2xl 
                 border rounded-full"
               >
@@ -121,7 +127,7 @@ function Todo() {
               }}
               key={index}
               className="flex justify-between 
-              bg-orange-200 p-3 text-2xl w-3/4 
+              bg-white p-3 text-2xl w-3/4 
               m-3 relative left-8 top-6 shadow-2xl 
               border rounded-full"
             >
