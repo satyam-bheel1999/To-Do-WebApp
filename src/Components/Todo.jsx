@@ -41,7 +41,7 @@ function Todo() {
        border rounded-md shadow-xl 
        relative top-8 right-36 p-7 
        bg-white flex flex-col
-       transition-transform duration-300 ease-in-out hover:-translate-y-2">
+       transition-transform duration-200 ease-out hover:-translate-y-4">
         <form className="flex flex-row lg:flex lg:flex-col">
           <input
             type="text"
@@ -93,7 +93,8 @@ function Todo() {
                 className="flex justify-between 
                 bg-white p-3 text-2xl m-3 
                 relative top-6 shadow-2xl 
-                border rounded-full"
+                border rounded-full
+                transition-transform duration-200 ease-out hover:-translate-y-4"
               >
                 {item.text}
                 <div className="">
@@ -114,7 +115,7 @@ function Todo() {
       </div>
 
       <div className="left-32 h-screen relative w-2/4 lg:flex flex-col hidden ">
-        <h1 className="text-center font-extrabold text-2xl hidden lg:block">
+        <h1 className="text-center font-extrabold text-2xl hidden lg:block relative mt-3">
           {" "}
           Today's Task{" "}
         </h1>
@@ -129,7 +130,8 @@ function Todo() {
               className="flex justify-between 
               bg-white p-3 text-2xl w-3/4 
               m-3 relative left-8 top-6 shadow-2xl 
-              border rounded-full"
+              border rounded-full
+              transition-transform duration-400 ease-out hover:-translate-y-2"
             >
               {item.text}
               <div className="">
