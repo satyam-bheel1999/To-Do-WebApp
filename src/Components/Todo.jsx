@@ -37,9 +37,9 @@ function Todo() {
 
   return (
     <>
-      <div className="h-4/5 lg:h-2/3 lg:w-1/4 w-9/12
+      <div className="h-4/5 lg:h-2/3 lg:w-1/4 w-screen
        border rounded-md shadow-xl 
-       relative top-8 right-36 p-7 
+       relative top-8 p-7 lg:right-16 
        bg-white flex flex-col
        transition-transform duration-200 ease-out hover:-translate-y-4">
         <form className="flex flex-row lg:flex lg:flex-col">
